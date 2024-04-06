@@ -1,0 +1,11 @@
+C:\Project\Travel agency\TravelAgency.Domain\bin\Debug\net7.0\TravelAgency.Domain.deps.json
+C:\Project\Travel agency\TravelAgency.Domain\bin\Debug\net7.0\TravelAgency.Domain.dll
+C:\Project\Travel agency\TravelAgency.Domain\bin\Debug\net7.0\TravelAgency.Domain.pdb
+C:\Project\Travel agency\TravelAgency.Domain\obj\Debug\net7.0\TravelAgency.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\Travel agency\TravelAgency.Domain\obj\Debug\net7.0\TravelAgency.Domain.AssemblyInfoInputs.cache
+C:\Project\Travel agency\TravelAgency.Domain\obj\Debug\net7.0\TravelAgency.Domain.AssemblyInfo.cs
+C:\Project\Travel agency\TravelAgency.Domain\obj\Debug\net7.0\TravelAgency.Domain.csproj.CoreCompileInputs.cache
+C:\Project\Travel agency\TravelAgency.Domain\obj\Debug\net7.0\TravelAgency.Domain.dll
+C:\Project\Travel agency\TravelAgency.Domain\obj\Debug\net7.0\refint\TravelAgency.Domain.dll
+C:\Project\Travel agency\TravelAgency.Domain\obj\Debug\net7.0\TravelAgency.Domain.pdb
+C:\Project\Travel agency\TravelAgency.Domain\obj\Debug\net7.0\ref\TravelAgency.Domain.dll

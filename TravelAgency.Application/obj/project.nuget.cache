@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "vZPiBw+6PcHrby3d26PMfyUVzF/rvCaVeOtlIMgfJbbcZBaNrtRd5awsXFJ2HU3M7amQO3rph8PzsbYR3stFAA==",
+  "success": true,
+  "projectFilePath": "C:\\Project\\Travel agency\\TravelAgency.Application\\TravelAgency.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Man\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
+    "C:\\Users\\Man\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Man\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

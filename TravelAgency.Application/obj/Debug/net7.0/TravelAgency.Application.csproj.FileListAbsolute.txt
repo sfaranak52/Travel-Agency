@@ -1,0 +1,15 @@
+C:\Project\Travel agency\TravelAgency.Application\bin\Debug\net7.0\TravelAgency.Application.deps.json
+C:\Project\Travel agency\TravelAgency.Application\bin\Debug\net7.0\TravelAgency.Application.dll
+C:\Project\Travel agency\TravelAgency.Application\bin\Debug\net7.0\TravelAgency.Application.pdb
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\TravelAgency.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\TravelAgency.Application.AssemblyInfoInputs.cache
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\TravelAgency.Application.AssemblyInfo.cs
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\TravelAgency.Application.csproj.CoreCompileInputs.cache
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\TravelAgency.Application.dll
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\refint\TravelAgency.Application.dll
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\TravelAgency.Application.pdb
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\ref\TravelAgency.Application.dll
+C:\Project\Travel agency\TravelAgency.Application\bin\Debug\net7.0\TravelAgency.Domain.dll
+C:\Project\Travel agency\TravelAgency.Application\bin\Debug\net7.0\TravelAgency.Domain.pdb
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\TravelAgency.Application.csproj.AssemblyReference.cache
+C:\Project\Travel agency\TravelAgency.Application\obj\Debug\net7.0\TravelAgency.Application.csproj.CopyComplete
