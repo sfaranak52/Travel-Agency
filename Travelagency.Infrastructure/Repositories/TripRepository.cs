@@ -1,8 +1,4 @@
-﻿using TravelAgency.Application.Interfaces.Common;
-using TravelAgency.Domain.Aggregates.InvoiceAggregate;
-using TravelAgency.Domain.Aggregates.Trip;
-
-namespace Travelagency.Infrastructure.Repositories;
+﻿namespace Travelagency.Infrastructure.Repositories;
 
 public class TripRepository : ITripRepository
 {

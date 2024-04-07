@@ -1,6 +1,4 @@
-﻿using TravelAgency.Application.Interfaces.Repositories;
-
-namespace TravelAgency.Application.Features.Customer.Command.AddCustomer;
+﻿namespace TravelAgency.Application.Features.Customer.Command.AddCustomer;
 
 public class AddCustomerCommandHandler : IRequestHandler<AddCustomerCommand, Guid>
 {

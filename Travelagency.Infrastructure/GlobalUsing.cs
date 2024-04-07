@@ -5,3 +5,5 @@ global using Microsoft.EntityFrameworkCore;
 global using TravelAgency.Domain.Aggregates.InvoiceAggregate;
 global using TravelAgency.Domain.Aggregates.CutomerAggregate;
 global using TravelAgency.Domain.Aggregates.PayAggregate;
+global using TravelAgency.Application.Interfaces.Common;
+global using TravelAgency.Domain.Aggregates.Trip;

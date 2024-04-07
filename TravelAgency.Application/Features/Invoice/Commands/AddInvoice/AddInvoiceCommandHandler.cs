@@ -1,6 +1,4 @@
-﻿using TravelAgency.Application.Interfaces.Repositories;
-
-namespace TravelAgency.Application.Features.Invoice.Commands.AddInvoice;
+﻿namespace TravelAgency.Application.Features.Invoice.Commands.AddInvoice;
 
 public class AddInvoiceCommandHandler : IRequestHandler<AddInvoiceCommand, Guid>
 {

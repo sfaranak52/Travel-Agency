@@ -1,7 +1,4 @@
-﻿using TravelAgency.Application.Features.Invoice.Commands.AddInvoice;
-using TravelAgency.Application.Interfaces.Repositories;
-
-namespace TravelAgency.Application.Features.Pay.Command.CreatePay;
+﻿namespace TravelAgency.Application.Features.Pay.Command.CreatePay;
 
 public class CreatePayCommandHandler : IRequestHandler<CreatePayCommand, Guid>
 {
@@ -26,9 +23,9 @@ public class CreatePayCommandHandler : IRequestHandler<CreatePayCommand, Guid>
         var tripPrice = await _tripRepository.PriceSum(request.InvoiceId);
         if ((customer.CustomerType == CustomerTypeEnum.Cash && request.PayType == PayTypeEnum.Cash &&
              tripPrice - request.Amount > 0) || customer.CustomerType == CustomerTypeEnum.Credit && request.PayType == PayTypeEnum.Credit &&
-             tripPrice > request.Amount * 0.5m ) 
+             tripPrice > request.Amount * 0.5m)
         {
-            var pay = Domain.Aggregates.PayAggregate.Pay.Create(request.InvoiceId,request.Amount,request.PayType,request.Description);
+            var pay = Domain.Aggregates.PayAggregate.Pay.Create(request.InvoiceId, request.Amount, request.PayType, PayStatusEnum.Paied, request.Description);
             _payRepository.Add(pay);
             await _payRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
             return pay.Id;
@@ -38,6 +35,9 @@ public class CreatePayCommandHandler : IRequestHandler<CreatePayCommand, Guid>
             throw new InvalidOperationException("You are unable to pay");
         }
 
-       
+        //var pay = Domain.Aggregates.PayAggregate.Pay.Create(request.InvoiceId, request.Amount, request.PayType, PayStatusEnum.Paied, request.Description);
+        //_payRepository.Add(pay);
+        //await _payRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
+        //return pay.Id;
     }
 }

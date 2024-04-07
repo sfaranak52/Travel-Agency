@@ -20,4 +20,18 @@ public class PayRepository:IPayRepository
         _context.Pays.Add(pay);
     }
 
+    public async Task<Pay?> GetByIdAsync(Guid payId)
+    {
+        return await _context.Pays.FirstOrDefaultAsync(p => p.Id == payId);
+    }
+
+    public void Remove(Pay pay)
+    {
+        _context.Remove(pay);
+    }
+    public void Update(Pay pay)
+    {
+        _context.Pays.Update(pay);
+    }
+
 }

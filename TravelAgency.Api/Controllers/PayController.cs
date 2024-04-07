@@ -1,4 +1,5 @@
 ﻿using TravelAgency.Application.Features.Pay.Command.CreatePay;
+using TravelAgency.Application.Features.Pay.Command.DeletePay;
 
 namespace TravelAgency.Api.Controllers;
 
@@ -22,6 +23,20 @@ public class PayController : ControllerBase
     public async Task<IActionResult> CreatePay(CreatePayDto request)
     {
         var command = new CreatePayCommand(request.InvoiceId,request.PayType,request.Amount,request.Description);
+        var result = await _mediator.Send(command);
+        return Ok(result);
+    }
+
+    /// <summary>
+    /// Remove Peyment
+    /// </summary>
+    /// <param name="id">Pay Id</param>
+    /// <param name="description">Description</param>;
+    /// <returns></returns>
+    [HttpPut("{id}")]
+    public async Task<IActionResult> DeletePayment(Guid id, string description)
+    {
+        var command = new DeletePayCommand(id, description);
         var result = await _mediator.Send(command);
         return Ok(result);
     }
