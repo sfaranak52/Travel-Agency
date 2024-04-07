@@ -12,26 +12,12 @@ public class Trip: AggregateRoot<Guid>
     public IsCanceledEnum IsCancelType { get; protected set; }
     public string? Description { get; protected set; }
 
-    private ICancelationStrategy _cancelationStrategy;
+    [NotMapped]
+    public ICancelationStrategy CancelationStrategy { get; set; }
 
-    public void SetPenalltyStrategy(ICancelationStrategy cancelationStrategy)
-    {
-        _cancelationStrategy = cancelationStrategy;
-    }
-
-    private decimal CalculateCancelationCost(CancelationTypeEnum cancelationType, decimal price)
-    {
-        if (_cancelationStrategy == null)
-        {
-            return price;
-        }
-        return price - _cancelationStrategy.CalculateCancelationCost(cancelationType, price);
-    }
-
-    private Trip(Guid id, decimal price,Guid invoiceId, CancelationTypeEnum cancelationType, string source,
+    private Trip(Guid id, Guid invoiceId, CancelationTypeEnum cancelationType, string source,
         string destination, DateTime departTime, TripTypeEnum tripType, IsCanceledEnum isCancelType, string description) : base(id)
     {
-        Price = price;
         InvoiceId = invoiceId;
         CancelationType = cancelationType;  
         Source = source; 
@@ -42,15 +28,14 @@ public class Trip: AggregateRoot<Guid>
         Description = description;
     }
 
-    public static Trip Create(decimal price,Guid invoiceId, CancelationTypeEnum cancelationType, string source,
+    public static Trip Create(Guid invoiceId, CancelationTypeEnum cancelationType, string source,
         string destination, DateTime departTime, TripTypeEnum tripType, IsCanceledEnum isCancelType, string description)
     {
-        var totalPrice = price;
-        if (isCancelType == IsCanceledEnum.Canceled)
-        {
-            totalPrice = price * (decimal)cancelationType / 100;
-        }
-        return new Trip(Guid.NewGuid(), totalPrice, invoiceId,cancelationType,source,destination,departTime,tripType,isCancelType, description);
+        return new Trip(Guid.NewGuid(), invoiceId,cancelationType,source,destination,departTime,tripType,isCancelType, description);
     }
-
+    public Trip SetPrice(IsCanceledEnum isCancelType,decimal price)
+    {
+        Price = CancelationStrategy.CalculateCancelationCost(isCancelType,price);
+        return this;
+    }
 }

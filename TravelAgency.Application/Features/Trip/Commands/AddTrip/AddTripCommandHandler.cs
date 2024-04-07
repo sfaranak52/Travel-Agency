@@ -1,6 +1,4 @@
-﻿using TravelAgency.Application.Interfaces.Repositories;
-
-namespace TravelAgency.Application.Features.Trip.Commands.AddTrip;
+﻿namespace TravelAgency.Application.Features.Trip.Commands.AddTrip;
 
 public class AddTripCommandHandler : IRequestHandler<AddTripCommand, Guid>
 {
@@ -12,9 +10,20 @@ public class AddTripCommandHandler : IRequestHandler<AddTripCommand, Guid>
     }
 
     public async Task<Guid> Handle(AddTripCommand request, CancellationToken cancellationToken)
-    {
-        var trip = Domain.Aggregates.Trip.Trip.Create(request.Price,request.Invoiceid,request.CancelationType,request.Source,request.Destination
+    {        
+        var trip = Domain.Aggregates.Trip.Trip.Create(request.Invoiceid,request.CancelationType,request.Source,request.Destination
                                                      ,request.DepartTime,request.Triptype,request.IsCancelType,request.Description);
+        if (request.CancelationType == CancelationTypeEnum.NoCancelation)
+        {
+            trip.CancelationStrategy = new NoCancelationSt();
+        }
+        else
+        {
+            trip.CancelationStrategy = new PercentageCancelationSt((decimal)request.CancelationType/100);
+        }
+        
+        trip.SetPrice(request.IsCancelType,request.Price);
+
         _tripRepository.Add(trip);
         await _tripRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
         return trip.Id;
