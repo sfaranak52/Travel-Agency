@@ -34,10 +34,5 @@ public class CreatePayCommandHandler : IRequestHandler<CreatePayCommand, Guid>
         {
             throw new InvalidOperationException("You are unable to pay");
         }
-
-        //var pay = Domain.Aggregates.PayAggregate.Pay.Create(request.InvoiceId, request.Amount, request.PayType, PayStatusEnum.Paied, request.Description);
-        //_payRepository.Add(pay);
-        //await _payRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
-        //return pay.Id;
     }
 }

@@ -1,9 +1,10 @@
-﻿namespace TravelAgency.Domain.Aggregates.Trip;
+﻿namespace TravelAgency.Domain.Aggregates.TripAggregate;
 
 public class Trip: AggregateRoot<Guid>
 {
     public decimal Price { get; protected set; }
     public Guid InvoiceId { get; protected set; }
+    public DateTime TripDate { get; protected set; }
     public CancelationTypeEnum CancelationType { get; protected set; }
     public string Source { get; protected set; }
     public string Destination { get; protected set; }

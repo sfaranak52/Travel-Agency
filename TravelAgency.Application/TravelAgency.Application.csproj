@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Features\Invoice\Common\" />
-    <Folder Include="Features\Invoice\Queries\" />
+    <Folder Include="Features\Invoice\Queries\GetCreditExpenditures\" />
     <Folder Include="Features\Trip\Queries\" />
   </ItemGroup>
 

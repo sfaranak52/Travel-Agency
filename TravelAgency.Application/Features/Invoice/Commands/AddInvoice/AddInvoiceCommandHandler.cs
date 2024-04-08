@@ -1,9 +1,13 @@
-﻿namespace TravelAgency.Application.Features.Invoice.Commands.AddInvoice;
+﻿using TravelAgency.Domain.SpecificationPattern;
+
+namespace TravelAgency.Application.Features.Invoice.Commands.AddInvoice;
 
 public class AddInvoiceCommandHandler : IRequestHandler<AddInvoiceCommand, Guid>
 {
     private readonly IInvoiceRepository _invoiceRepository;
-    
+    //public ISumSpecification<Domain.Aggregates.PayAggregate.Pay> _TotalPaySpecification;
+    //public ISumSpecification<Domain.Aggregates.TripAggregate.Trip> _TotalTripSpecification;
+
     public AddInvoiceCommandHandler(IInvoiceRepository invoiceRepository)
     {
         _invoiceRepository = invoiceRepository;
@@ -17,4 +21,11 @@ public class AddInvoiceCommandHandler : IRequestHandler<AddInvoiceCommand, Guid>
         await _invoiceRepository.UnitOfWork.SaveEntitiesAsync(cancellationToken);
         return invoice.Id;
     }
+
+    //public Invoice SetExpenditures(decimal expenditures)
+    //{
+    //    var price = _TotalTripSpecification.CalculateSum();
+    //    Expenditures = price;
+    //    return this;
+    //}
 }

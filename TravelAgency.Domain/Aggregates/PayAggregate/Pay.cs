@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace TravelAgency.Domain.Aggregates.PayAggregate;
+﻿namespace TravelAgency.Domain.Aggregates.PayAggregate;
 public class Pay : AggregateRoot<Guid>
 {
     public Guid InvoiceId { get; protected set; }

@@ -1,6 +1,4 @@
-﻿using TravelAgency.Domain.Aggregates.Trip;
-
-namespace TravelAgency.Application.Interfaces.Repositories;
+﻿namespace TravelAgency.Application.Interfaces.Repositories;
 
 public interface ITripRepository:IRepository<Trip>
 {
